@@ -240,7 +240,7 @@ def job():
 
 def do_schedule():
 	print("Sheduling...")
-	schedule.every().day.at("17:27:00").do(job)
+	schedule.every().day.at("17:35:00").do(job)
 	while True:
 		schedule.run_pending()
 		time.sleep(1)
