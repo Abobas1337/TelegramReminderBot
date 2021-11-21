@@ -195,7 +195,7 @@ def echo_all(message):
 
 def job():
 	TOKEN = '2084320484:AAFChX3RLZ035MEO69-8vco0TrUWQPTDF_U'
-	client_secret_calendar = '\cleint_secret.json' # указываем путь к скачанному Json
+	client_secret_calendar = 'client_secret.json' # указываем путь к скачанному Json
 	print("I'm working...")
 	bot = telepot.Bot(TOKEN)
 	credentials = ServiceAccountCredentials.from_json_keyfile_name(client_secret_calendar,
@@ -240,7 +240,7 @@ def job():
 
 def do_schedule():
 	print("Sheduling...")
-	schedule.every().day.at("17:15:00").do(job)
+	schedule.every().day.at("17:27:00").do(job)
 	while True:
 		schedule.run_pending()
 		time.sleep(1)
