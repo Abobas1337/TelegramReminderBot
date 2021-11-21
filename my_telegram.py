@@ -247,6 +247,7 @@ def do_schedule():
 
 
 def main_loop():
+	print("WORK STARTED)))))))")
 	thread = Thread(target=do_schedule)
 	thread.start()
 	bot.polling(True)
