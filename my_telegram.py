@@ -16,6 +16,7 @@ from apiclient import discovery
 from oauth2client.service_account import ServiceAccountCredentials
 
 import time
+import pytz
 import schedule
 from threading import Thread
 
@@ -240,7 +241,17 @@ def job():
 
 def do_schedule():
 	print("Sheduling...")
-	schedule.every().day.at("17:50:00").do(job)
+	msk_utc_offset = datetime.timedelta(hours=3)
+	loc_utc_offset = datetime.datetime.now(datetime.timezone.utc).astimezone().tzinfo.utcoffset(None)
+
+	msk_time = datetime.timedelta(hours=20, minutes=15)
+	loc_time = (msk_time - msk_utc_offset) + loc_utc_offset
+
+	time_str = loc_time.__str__()
+	time_str = '0' + time_str if len(time_str.split(':')[0]) == 1 else time_str
+	print("Scheduled in:", time_str)
+
+	schedule.every().day.at(time_str).do(job)
 	while True:
 		schedule.run_pending()
 		time.sleep(1)
