@@ -244,7 +244,7 @@ def do_schedule():
 	msk_utc_offset = datetime.timedelta(hours=3)
 	loc_utc_offset = datetime.datetime.now(datetime.timezone.utc).astimezone().tzinfo.utcoffset(None)
 
-	msk_time = datetime.timedelta(hours=20, minutes=15)
+	msk_time = datetime.timedelta(hours=7, minutes=30)
 	loc_time = (msk_time - msk_utc_offset) + loc_utc_offset
 
 	time_str = loc_time.__str__()
