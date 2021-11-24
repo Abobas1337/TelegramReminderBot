@@ -22,7 +22,7 @@ from threading import Thread
 
 import telebot
 from telebot import types
-bot = telebot.TeleBot('2084320484:AAFChX3RLZ035MEO69-8vco0TrUWQPTDF_U')
+bot = telebot.TeleBot('2084320484:AAGW82f85MdoQscb8lHN_fJgimcDAU9QMMw')
 
 
 
@@ -195,7 +195,7 @@ def echo_all(message):
 
 
 def job():
-	TOKEN = '2084320484:AAFChX3RLZ035MEO69-8vco0TrUWQPTDF_U'
+	TOKEN = '2084320484:AAGW82f85MdoQscb8lHN_fJgimcDAU9QMMw'
 	client_secret_calendar = 'client_secret.json' # указываем путь к скачанному Json
 	print("I'm working...")
 	bot = telepot.Bot(TOKEN)
